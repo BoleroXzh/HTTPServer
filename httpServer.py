@@ -43,8 +43,6 @@ def verify(NAMEin,PASSWORDin):
             return 0
     except:
         print "Error: unable to fecth data"
-    
-
 
 HOST = ''
 PORT = 8000
@@ -61,9 +59,6 @@ indexx_content = file.read()
 index_content += indexx_content
 file.close()
 
-
-
-
 #Read reg.html, put into HTTP response data
 reg_content = '''
 HTTP/1.x 200 ok
@@ -74,9 +69,6 @@ Content-Type: text/html
 file = open('reg.html', 'r')
 reg_content += file.read()
 file.close()
-
-
-
 
 #Read a.css, put into HTTP response data
 css_content = '''
@@ -89,7 +81,6 @@ file = open('a.css', 'r')
 css_content += file.read()
 file.close()
 
-
 #Read picture, put into HTTP response data
 file = open('T-mac.jpg', 'rb')
 pic_content = '''
@@ -99,8 +90,6 @@ Content-Type: image/jpg
 '''
 pic_content += file.read()
 file.close()
-
-
 
 #Configure socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -135,7 +124,6 @@ while True:
             content += '<br /><font color="green" size="7">register successs!</p>'
         else:
             continue
-
     
     #deal with POST method
     elif method == 'POST':
@@ -157,7 +145,6 @@ while True:
         else:
             content += 'welcome to join us, register success'
             insert(user[1], pw[1])
-    
     else:
         continue
 
